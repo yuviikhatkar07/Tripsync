@@ -16,8 +16,13 @@
     <link href="style.css" rel="stylesheet" />
   </head>
 
-  <body id="home">
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar"
+    data-bs-offset="80"
+    tabindex="0"
+  >
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container-fluid px-4">
         <a class="navbar-brand fw-bold">TripSync</a>
 
@@ -46,7 +51,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                href="#destinations"
                 id="destDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -55,11 +60,15 @@
               </a>
 
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#destinations">Goa</a></li>
+                <li>
+                  <a class="dropdown-item" href="#destinations">Goa</a>
+                </li>
                 <li>
                   <a class="dropdown-item" href="#destinations">Manali</a>
                 </li>
-                <li><a class="dropdown-item" href="#destinations">Dubai</a></li>
+                <li>
+                  <a class="dropdown-item" href="#destinations">Dubai</a>
+                </li>
               </ul>
             </li>
 
@@ -82,7 +91,7 @@
       </div>
     </nav>
 
-    <section class="hero-section p-0">
+    <section id="home" class="hero-section p-0">
       <div class="hero-breadcrumb">
         <a href="#home">Home</a> /
         <span>Dashboard</span>
@@ -191,7 +200,7 @@
       </div>
     </section>
 
-    <section id="destinations">
+    <section class="navlink" id="destinations" href="destination">
       <div class="container">
         <div class="section-box text-center">
           <h2>Popular Destinations</h2>
@@ -350,7 +359,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section class="nav-link" id="contact" href="contact">
       <div class="container">
         <div class="section-box">
           <h2>Contact Us</h2>
