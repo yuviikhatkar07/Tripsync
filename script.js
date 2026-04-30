@@ -10,34 +10,39 @@ function generatePlan() {
     return;
   }
 
-  let days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+  let modalEl = document.getElementById("planModal");
+  let modal =
+    bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+  modal.hide();
 
-  let activities = {
-    goa: ["Beach", "Water Sports", "Night Party"],
-    manali: ["Snow", "Valley", "Cafe"],
-    dubai: ["Burj Khalifa", "Safari", "Mall"],
-  };
+  output.innerHTML =
+    '<div class="text-center"><div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
-  let plan = activities[destination];
-  let result = "<div class='row'>";
+  setTimeout(() => {
+    let days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
 
-  for (let i = 0; i < days; i++) {
-    result += `
+    let activities = {
+      goa: ["Beach", "Water Sports", "Night Party"],
+      manali: ["Snow", "Valley", "Cafe"],
+      dubai: ["Burj Khalifa", "Safari", "Mall"],
+    };
+
+    let plan = activities[destination];
+    let result = "<div class='row'>";
+
+    for (let i = 0; i < days; i++) {
+      result += `
         <div class="col-md-4 mb-3">
             <div class="card p-3 shadow-sm">
                 <h5>Day ${i + 1}</h5>
                 <p>${plan[i % plan.length]}</p>
             </div>
         </div>`;
-  }
+    }
 
-  result += "</div>";
-  output.innerHTML = result;
-
-  let modalEl = document.getElementById("planModal");
-  let modal =
-    bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-  modal.hide();
+    result += "</div>";
+    output.innerHTML = result;
+  }, 1000);
 }
 
 function selectDestination(place) {
