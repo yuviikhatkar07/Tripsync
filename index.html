@@ -312,6 +312,7 @@
                 data-bs-placement="top"
                 title="Goa Travel Season"
                 data-bs-content="Best time: Oct–Mar. Perfect for beaches, parties & sunsets."
+                data-page="1"
               >
                 <div class="icon">☀️</div>
                 <h5>Goa Travel Season</h5>
@@ -331,6 +332,7 @@
                 data-bs-placement="bottom"
                 title="Manali Tips"
                 data-bs-content="Visit in winter for snow or summer for trekking & adventure."
+                data-page="1"
               >
                 <div class="icon">🌲</div>
                 <h5>Manali Tips</h5>
@@ -347,6 +349,7 @@
                 data-bs-placement="top"
                 title="Dubai Essentials"
                 data-bs-content="Luxury travel, desert safari & Burj Khalifa visits."
+                data-page="1"
               >
                 <div class="icon">🏙️</div>
                 <h5>Dubai Essentials</h5>
@@ -354,7 +357,85 @@
                 <span class="badge bg-danger">City</span>
               </div>
             </div>
+
+            <div class="col-md-4">
+              <div
+                class="insight-card"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="bottom"
+                title="Paris Highlights"
+                data-bs-content="Eiffel Tower, Louvre Museum & Seine River cruises."
+                data-page="2"
+              >
+                <div class="icon">🗼</div>
+                <h5>Paris Highlights</h5>
+                <p>Iconic landmarks and romantic strolls.</p>
+                <span class="badge bg-primary">Culture</span>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div
+                class="insight-card"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="top"
+                title="Tokyo Adventures"
+                data-bs-content="Shibuya crossing, temples & sushi experiences."
+                data-page="2"
+              >
+                <div class="icon">🏯</div>
+                <h5>Tokyo Adventures</h5>
+                <p>Modern city with ancient traditions.</p>
+                <span class="badge bg-info text-dark">Urban</span>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div
+                class="insight-card"
+                data-bs-toggle="popover"
+                data-bs-trigger="click"
+                data-bs-placement="bottom"
+                title="Bali Relaxation"
+                data-bs-content="Beaches, yoga retreats & rice terraces."
+                data-page="2"
+              >
+                <div class="icon">🏖️</div>
+                <h5>Bali Relaxation</h5>
+                <p>Peaceful islands and wellness.</p>
+                <span class="badge bg-secondary">Relax</span>
+              </div>
+            </div>
           </div>
+
+          <nav aria-label="Travel Insights Pagination" class="mt-4">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active" id="page1">
+                <a
+                  class="page-link"
+                  href="javascript:void(0);"
+                  onclick="
+                    showPage(1);
+                    return false;
+                  "
+                  >1</a
+                >
+              </li>
+              <li class="page-item" id="page2">
+                <a
+                  class="page-link"
+                  href="javascript:void(0);"
+                  onclick="
+                    showPage(2);
+                    return false;
+                  "
+                  >2</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </section>
