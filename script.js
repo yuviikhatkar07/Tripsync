@@ -25,6 +25,9 @@ function generatePlan() {
       goa: ["Beach", "Water Sports", "Night Party"],
       manali: ["Snow", "Valley", "Cafe"],
       dubai: ["Burj Khalifa", "Safari", "Mall"],
+      paris: ["Eiffel Tower", "Louvre Museum", "Seine River"],
+      tokyo: ["Shibuya Crossing", "Temples", "Sushi"],
+      bali: ["Beach Resort", "Rice Terraces", "Temples"],
     };
 
     let plan = activities[destination];
@@ -48,9 +51,9 @@ function generatePlan() {
 function selectDestination(place) {
   document.getElementById("destination").value = place;
 
-  document.querySelector(".plan-box").scrollIntoView({
+  document.getElementById("plan").scrollIntoView({
     behavior: "smooth",
-    block: "center",
+    block: "start",
   });
 }
 
@@ -69,6 +72,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize pagination
   showPage(1);
+
+  // Handle typeahead search input
+  const searchInput = document.getElementById("search");
+  const destinationMap = {
+    Goa: "goa",
+    Manali: "manali",
+    Dubai: "dubai",
+    Paris: "paris",
+    Tokyo: "tokyo",
+  };
+
+  searchInput.addEventListener("change", function () {
+    const selectedValue = this.value.trim();
+    const destinationCode = destinationMap[selectedValue];
+
+    if (destinationCode) {
+      // Set the destination in the dropdown
+      document.getElementById("destination").value = destinationCode;
+
+      // Scroll to the plan section
+      document
+        .getElementById("plan")
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Clear the search input
+      this.value = "";
+    }
+  });
 });
 
 function showPage(page) {
